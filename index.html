@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="product-page-container">
+    <!-- Product Images Gallery -->
+    <div class="product-images">
+      <div class="main-image">
+        <img src="https://via.placeholder.com/500" alt="Main product image" id="main-image">
+      </div>
+      <div class="thumbnails">
+        <div class="thumbnail" onclick="changeImage('https://via.placeholder.com/500')">
+          <img src="https://via.placeholder.com/100" alt="Thumbnail 1">
+        </div>
+        <div class="thumbnail" onclick="changeImage('https://via.placeholder.com/500/111')">
+          <img src="https://via.placeholder.com/100/111" alt="Thumbnail 2">
+        </div>
+        <div class="thumbnail" onclick="changeImage('https://via.placeholder.com/500/222')">
+          <img src="https://via.placeholder.com/100/222" alt="Thumbnail 3">
+        </div>
+        <div class="thumbnail" onclick="changeImage('https://via.placeholder.com/500/333')">
+          <img src="https://via.placeholder.com/100/333" alt="Thumbnail 4">
+        </div>
+        <div class="thumbnail" onclick="changeImage('https://via.placeholder.com/500/444')">
+          <img src="https://via.placeholder.com/100/444" alt="Thumbnail 5">
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-details">
+      <h1 class="product-title">Product Name</h1>
+      <p class="product-price">$49.99</p>
+
+      <!-- Size Chart Button and Modal -->
+      <button class="size-chart-btn" onclick="toggleSizeChart()">Size Chart</button>
+      <div class="modal" id="size-chart-modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+          <button class="close-btn" onclick="closeModal()">×</button>
+          <h2>Size Chart</h2>
+          <table>
+            <tr>
+              <th>Size</th>
+              <th>Chest</th>
+              <th>Waist</th>
+            </tr>
+            <tr>
+              <td>Small</td>
+              <td>34" - 36"</td>
+              <td>28" - 30"</td>
+            </tr>
+            <tr>
+              <td>Medium</td>
+              <td>38" - 40"</td>
+              <td>32" - 34"</td>
+            </tr>
+            <tr>
+              <td>Large</td>
+              <td>42" - 44"</td>
+              <td>36" - 38"</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Product Variants (Color & Size) -->
+      <div class="product-variants">
+        <div class="color-variants">
+          <label for="colors">Choose Color:</label>
+          <div class="color-options">
+            <div class="color-swatch" style="background-color: red;" onclick="changeColor('red')"></div>
+            <div class="color-swatch" style="background-color: blue;" onclick="changeColor('blue')"></div>
+            <div class="color-swatch" style="background-color: green;" onclick="changeColor('green')"></div>
+          </div>
+        </div>
+        <div class="size-variants">
+          <label for="sizes">Choose Size:</label>
+          <select id="sizes" onchange="changeSize(this.value)">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Add to Cart -->
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- Compare Colors Button -->
+    <button class="compare-colours-btn" onclick="toggleCompareColors()">Compare Colours</button>
+    <div class="compare-colours-modal" id="compare-colours-modal">
+      <div class="modal-overlay" onclick="closeCompareColors()"></div>
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeCompareColors()">×</button>
+        <h2>Compare Colours</h2>
+        <div class="color-swatch" style="background-color: red;"></div>
+        <div class="color-swatch" style="background-color: blue;"></div>
+        <div class="color-swatch" style="background-color: green;"></div>
+      </div>
+    </div>
+
+    <!-- Product Bundle -->
+    <div class="product-bundle">
+      <h3>Buy These Together</h3>
+      <div class="bundle-item">
+        <img src="https://via.placeholder.com/100" alt="Bundle Item 1">
+        <span class="bundle-item-title">Bundle Item 1</span>
+        <span class="bundle-item-price">$19.99</span>
+      </div>
+      <div class="bundle-item">
+        <img src="https://via.placeholder.com/100" alt="Bundle Item 2">
+        <span class="bundle-item-title">Bundle Item 2</span>
+        <span class="bundle-item-price">$29.99</span>
+      </div>
+      <p class="bundle-total">Total: $69.99</p>
+      <button class="add-bundle-to-cart">Add Bundle to Cart</button>
+    </div>
+
+    <!-- Tabs for Product Info -->
+    <div class="tabs">
+      <button class="tab-button" onclick="toggleTab('description')">Description</button>
+      <button class="tab-button" onclick="toggleTab('product-info')">Product Info</button>
+      <button class="tab-button" onclick="toggleTab('shipping-details')">Shipping Details</button>
+    </div>
+    <div class="tab-content">
+      <div class="tab-panel" id="description">
+        <p>Product description goes here...</p>
+      </div>
+      <div class="tab-panel" id="product-info">
+        <p>Product information goes here...</p>
+      </div>
+      <div class="tab-panel" id="shipping-details">
+        <p>Shipping details go here...</p>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <h3>Related Products</h3>
+    <div class="related-products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Related Product 1">
+        <span class="product-name">Related Product 1</span>
+        <span class="product-price">$29.99</span>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Related Product 2">
+        <span class="product-name">Related Product 2</span>
+        <span class="product-price">$39.99</span>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Related Product 3">
+        <span class="product-name">Related Product 3</span>
+        <span class="product-price">$49.99</span>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Related Product 4">
+        <span class="product-name">Related Product 4</span>
+        <span class="product-price">$59.99</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
