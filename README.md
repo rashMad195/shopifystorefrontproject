@@ -22,7 +22,7 @@ This is a fully responsive product page layout that mimics a typical Shopify sto
 
 1. Clone this repository:
     ```
-    git clone https://github.com/your-username/shopifystorefrontproject.git
+    git clone [https://github.com/your-username/shopifystorefrontproject.git](https://github.com/rashMad195/shopifystorefrontproject.git)
     ```
 
 2. Navigate to the project directory:
