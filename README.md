@@ -35,4 +35,3 @@ This is a fully responsive product page layout that mimics a typical Shopify sto
 
 4. (Optional) If you want to use a local server:
     - Use a simple HTTP server like Python's built-in server or live-server in VS Code.
-    - 
